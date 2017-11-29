@@ -1,12 +1,22 @@
-import React from "react";
-import ExchangeContainer from "../../containers/Exchange";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { Header } from 'semantic-ui-react';
 
-const Home = () => (
+import ExchangeContainer from '../../containers/Exchange';
+import { transformToCoin } from '../../lib/helpers';
+
+const Home = ({ match }) => (
   <div>
-    <h1>Home</h1>
-    <p>Welcome home!</p>
-    <ExchangeContainer />
+    <Header as="h3">
+      Foreign Exchange rates in {transformToCoin(match.params.base)}
+    </Header>
+    <ExchangeContainer base={match.params.base || 'BRL'} />
   </div>
 );
 
-export default Home;
+Home.propTypes = {
+  match: PropTypes.object.isRequired // eslint-disable-line
+};
+
+export default withRouter(Home);
