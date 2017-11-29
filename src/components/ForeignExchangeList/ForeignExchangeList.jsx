@@ -18,11 +18,10 @@ const FakeWireFrame = () => (
 const ForeignExchangeList = ({ items, fetching, base }) => (
   <Dimmer.Dimmable
     as={Segment}
-    blurring
     dimmed={fetching}
     style={{ minHeight: 170 }}
   >
-    <Dimmer active={fetching}>
+    <Dimmer active={fetching} inverted>
       <Loader>Loading</Loader>
     </Dimmer>
     {fetching ? (
