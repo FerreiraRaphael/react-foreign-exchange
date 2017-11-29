@@ -1,20 +1,25 @@
-import React from "react";
-import { Route, Link } from "react-router-dom";
-import Home from "../../screens/Home";
-import About from "../../screens/About";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Route, Redirect } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+import Navbar from '../../components/Navbar';
+import Home from '../../screens/Home';
+import About from '../../screens/About';
 
-const App = () => (
-  <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-    </header>
+const App = ({ base }) => (
+  <Container>
+    <Navbar base={base} />
 
     <main>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" render={() => <Redirect to="/coin/BRL" />} />
+      <Route path="/coin/:base" component={Home} />
       <Route exact path="/about" component={About} />
     </main>
-  </div>
+  </Container>
 );
+
+App.propTypes = {
+  base: PropTypes.string.isRequired
+};
 
 export default App;
