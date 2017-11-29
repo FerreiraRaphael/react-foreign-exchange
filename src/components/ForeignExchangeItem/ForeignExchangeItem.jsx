@@ -19,7 +19,8 @@ const styles = {
     textAlign: 'left'
   },
   headerLink: {
-    textDecoration: 'underline'
+    display: "block",
+    lineHeight: '1.2em'
   }
 };
 
@@ -27,9 +28,9 @@ const ForeignExchangeItem = ({ country, value, base }) => (
   <List.Item style={styles.item}>
     <Flag name={transformToFlag(country)} />
     <List.Content style={styles.content}>
-      <List.Header color="black" as={Link} to={`/coin/${country}`} style={styles.headerLink}>
+      <Link to={`/coin/${country}`} style={styles.headerLink}>
         {transformToCoin(country)}
-      </List.Header>
+      </Link>
       <List.Description>
         {`${transformToMoneySimbol(base)} ${value}`}
       </List.Description>

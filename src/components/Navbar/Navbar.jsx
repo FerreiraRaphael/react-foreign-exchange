@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import { Header, Image } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import logo from '../../logo.svg';
 
 const styles = {
@@ -15,23 +15,21 @@ const styles = {
   link: {
     margin: '10px',
     padding: '5px',
-    color: 'black',
     transition: 'border .25s ease'
   },
   linkAcvtive: {
-    borderTop: '2px solid black',
-    borderBottom: '2px solid black'
+    borderTop: '2px solid #292d35',
+    borderBottom: '2px solid #292d35'
   },
   headerLink: {
-    color: 'black',
-    textDecoration: 'underline'
+    lineHeight: '1.2em'
   }
 };
 
 const Navbar = ({ base }) => (
   <header style={styles.header}>
-    <Header as="h1">React Foreign Exchange</Header>
-    <Header as="h3">
+    <h1>React Foreign Exchange</h1>
+    <p>
       A Foreign Exchange web app using React and the{' '}
       <a
         style={styles.headerLink}
@@ -41,7 +39,7 @@ const Navbar = ({ base }) => (
       >
         Fixer.io API
       </a>
-    </Header>
+    </p>
     <Image src={logo} style={styles.logo} size="small" />
     <NavLink
       to={`/coin/${base}`}

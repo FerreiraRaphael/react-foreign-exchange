@@ -16,14 +16,19 @@ const FakeWireFrame = () => (
 );
 
 const ForeignExchangeList = ({ items, fetching, base }) => (
-  <Dimmer.Dimmable as={Segment} blurring dimmed={fetching}>
+  <Dimmer.Dimmable
+    as={Segment}
+    blurring
+    dimmed={fetching}
+    style={{ minHeight: 170 }}
+  >
     <Dimmer active={fetching}>
       <Loader>Loading</Loader>
     </Dimmer>
     {fetching ? (
       <FakeWireFrame />
     ) : (
-      <List divided relaxed>
+      <List divided relaxed style={{ margin: 0 }}>
         {items.map(item => (
           <ForeignExchangeItem {...item} key={item.country} base={base} />
         ))}

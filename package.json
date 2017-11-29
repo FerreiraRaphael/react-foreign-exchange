@@ -16,7 +16,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.77.0"
+    "semantic-ui-react": "^0.77.0",
+    "typography": "^0.16.6",
+    "typography-theme-elk-glen": "^0.16.9"
   },
   "scripts": {
     "start": "react-scripts start",

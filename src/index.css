@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   text-align: center;
 }
 
@@ -9,13 +8,7 @@ body {
   margin-bottom: 25px;
 }
 
-.ui.list .list > .item a.header,
-.ui.list > .item a.header {
-  cursor: pointer;
-  color: black !important;
-}
-
-.ui.list .list > .item a.header:hover,
-.ui.list > .item a.header:hover {
-  color: black !important;
+a:hover {
+  color: #292d35;
+  text-decoration: none;
 }
