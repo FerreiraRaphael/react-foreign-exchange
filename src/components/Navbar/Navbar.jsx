@@ -19,7 +19,10 @@ const styles = {
   },
   linkAcvtive: {
     borderTop: '2px solid #292d35',
-    borderBottom: '2px solid #292d35'
+    borderBottom: '2px solid #292d35',
+    textDecoration: 'none',
+    textShadow: 'none',
+    backgroundImage: 'none'
   },
   headerLink: {
     lineHeight: '1.2em'

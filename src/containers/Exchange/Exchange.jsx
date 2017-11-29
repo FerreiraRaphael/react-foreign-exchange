@@ -21,14 +21,17 @@ class ExchangeContainer extends React.Component {
     return (
       <div>
         <Button
-          secondary
+          basic
           onClick={() => this.props.fetchExchange(this.props.base)}
           content="Update"
+          color="black"
           icon="download"
+          style={{ borderRadius: 0 }}
           label={{
             basic: true,
-            color: 'black',
+            color: "black",
             pointing: 'left',
+            style: { borderRadius: 0 },
             content: <Flag name={transformToFlag(this.props.base)} />
           }}
           loading={fetching}
