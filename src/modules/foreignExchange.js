@@ -67,7 +67,7 @@ export const fetchExchange = base => async dispatch => {
   const filtredCoins = coins.filter(coin => coin !== base);
   filtredCoins.forEach(async (coin, index) => {
     const response = await fetch(
-      `https://api.fixer.io/latest?base=${coin}&symbols=${base}`
+      `https://data.fixer.io/latest?base=${coin}&symbols=${base}`
     );
     const result = await response.json();
     dispatch(
